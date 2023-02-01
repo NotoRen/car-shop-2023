@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace CarShopLibrary
 {
-    public abstract class Veicolo
+    public class Auto:Veicolo
     {
-        public string Marca { get; set; }
-        public string Modello { get; set; }
-
-
-
-
+        public Auto(string marca, string modello)
+        {
+            Marca = marca;
+            Modello = modello;
+        }
     }
 }

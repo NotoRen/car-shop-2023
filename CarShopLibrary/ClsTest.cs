@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace CarShopLibrary
 {
-    public abstract class Veicolo
+    public class ClsTest
     {
-        public string Marca { get; set; }
-        public string Modello { get; set; }
-
-
-
-
+        public static string helloWorld(string nome)
+        {
+            return "ciao " + nome;
+        }
     }
 }

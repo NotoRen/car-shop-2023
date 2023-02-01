@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9f36ea9a-d0da-4179-a879-3c7b452e5391": {
+      "ProjectGuid": "9f36ea9a-d0da-4179-a879-3c7b452e5391",
+      "DisplayName": "CarShopConsole",
+      "ColorIndex": 0
+    },
+    "a03b688d-f663-4ef5-afec-c5881290f4bc": {
+      "ProjectGuid": "a03b688d-f663-4ef5-afec-c5881290f4bc",
+      "DisplayName": "CarShopLibrary",
+      "ColorIndex": 1
+    },
+    "1d19d6ec-bb9a-4344-bd81-0551d9f39bf1": {
+      "ProjectGuid": "1d19d6ec-bb9a-4344-bd81-0551d9f39bf1",
+      "DisplayName": "CarShopWPF",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

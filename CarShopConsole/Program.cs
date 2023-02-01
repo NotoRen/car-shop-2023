@@ -11,8 +11,10 @@ namespace CarShopConsole
     {
         static void Main(string[] args)
         {
-            Console.Write(ClsTest.helloWorld("Serena"));
-            Console.ReadKey();
+            Veicolo v = new Auto("BMW", "Serie 3");
+            Console.WriteLine(v.Marca + v.Modello);
+
+           Console.ReadKey();
         }
     }
 }
