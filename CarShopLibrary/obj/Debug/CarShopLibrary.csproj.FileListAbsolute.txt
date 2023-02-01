@@ -1,0 +1,6 @@
+C:\Users\snene\OneDrive\Desktop\scuola\informatica\2022-23\car-shop-NotoRen\CarShopLibrary\bin\Debug\CarShopLibrary.dll
+C:\Users\snene\OneDrive\Desktop\scuola\informatica\2022-23\car-shop-NotoRen\CarShopLibrary\bin\Debug\CarShopLibrary.pdb
+C:\Users\snene\OneDrive\Desktop\scuola\informatica\2022-23\car-shop-NotoRen\CarShopLibrary\obj\Debug\CarShopLibrary.csproj.AssemblyReference.cache
+C:\Users\snene\OneDrive\Desktop\scuola\informatica\2022-23\car-shop-NotoRen\CarShopLibrary\obj\Debug\CarShopLibrary.csproj.CoreCompileInputs.cache
+C:\Users\snene\OneDrive\Desktop\scuola\informatica\2022-23\car-shop-NotoRen\CarShopLibrary\obj\Debug\CarShopLibrary.dll
+C:\Users\snene\OneDrive\Desktop\scuola\informatica\2022-23\car-shop-NotoRen\CarShopLibrary\obj\Debug\CarShopLibrary.pdb

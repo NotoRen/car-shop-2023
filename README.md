@@ -1,3 +1,3 @@
 # Windows Car Shop
 ## Serena NOTO
-### First Lesson: 14/09/2022
+### First Lesson: 01/02/2023
