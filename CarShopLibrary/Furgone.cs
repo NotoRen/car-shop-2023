@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace CarShopLibrary
 {
-    internal class Veicolo
+    internal class Furgone : Veicolo
     {
-        public Veicolo()
+        public int portata;
+        new public enum configurazioneAssi
         {
+
+        }
+
+
+        public Furgone()
+        {
+
         }
     }
 }

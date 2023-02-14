@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarShopConsole
+namespace CarShopLibrary
 {
-    internal class Moto
+    internal class Moto:Veicolo
     {
     }
 }
