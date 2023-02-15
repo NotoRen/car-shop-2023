@@ -67,16 +67,16 @@ namespace CarShopConsole
             v = new Auto("Mercedes", "CLA", EAlimentazione.Diesel, "Grigio", true, 5, 18);
             ParcoMezzi.Add(v);
             v = new Moto("Yamaha", "KZ5", EAlimentazione.Benzina, "Verde", 
-                "A34DE76PLYT90", 3500, 210,
-                ETipoMoto.Enduro, 4,
-                130, new DateTime(2021,03,15), 12750);
+                new StructDimensioni(270,87,68), "A34DE76PLYT90", 3500, 210,
+                130, new DateTime(2021, 03, 15), 12750,
+                ETipoMoto.Enduro, 4);
             ParcoMezzi.Add(v);
             v = new Moto("Ducati", "RossoFuoco", EAlimentazione.Benzina, "Rosso", ETipoMoto.Strada, 4);
             ParcoMezzi.Add(v);
-            v = new Auto("Fiat", "500", EAlimentazione.Elettrica, "Bianco", 
-                "TR5654ER55YJT5", 37500, 140,
-                false, 3, 16,
-                90, new DateTime(2021, 10, 13), 17500);
+            v = new Auto("Fiat", "500", EAlimentazione.Elettrica, "Bianco",
+                new StructDimensioni(320, 160, 140), "TR5654ER55YJT5", 37500, 140,
+                90, new DateTime(2021, 10, 13), 17500,
+                false, 3, 16);
             ParcoMezzi.Add(v);
         }
     }

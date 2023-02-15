@@ -22,23 +22,23 @@ namespace CarShopLibrary
         public ETipoMoto Tipo { get; set; }
         public int NumTempi { get; set; }
 
-        public Moto(string marca, string modello, EAlimentazione alimentazione, string colore) 
+        public Moto(string marca, string modello, EAlimentazione alimentazione, string colore)
             : base(marca, modello, alimentazione, colore) { }
 
-        public Moto(string marca, string modello, EAlimentazione alimentazione, string colore, 
-            ETipoMoto tipo, int numTempi) 
+        public Moto(string marca, string modello, EAlimentazione alimentazione, string colore,
+            ETipoMoto tipo, int numTempi)
             : this(marca, modello, alimentazione, colore)
         {
             Tipo = tipo;
             NumTempi = numTempi;
         }
 
-        public Moto(string marca, string modello, EAlimentazione alimentazione, string colore, 
-            string vin, int km,  int maxSpeed,
-            ETipoMoto tipo, int numTempi,
-            int potenza, DateTime dataImmatricolazione, int prezzo
+        public Moto(string marca, string modello, EAlimentazione alimentazione, string colore,
+            StructDimensioni dimensioni, string vin, int km, int maxSpeed,
+            int potenza, DateTime dataImmatricolazione, int prezzo,
+            ETipoMoto tipo, int numTempi
             )
-            : base(marca, modello, vin,colore,km,alimentazione,maxSpeed,potenza,dataImmatricolazione,prezzo)
+            : base(marca, modello, alimentazione, colore, dimensioni, vin, km, maxSpeed, potenza, dataImmatricolazione, prezzo)
         {
             Tipo = tipo;
             NumTempi = numTempi;
