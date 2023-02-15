@@ -2,105 +2,82 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CarShopConsole
 {
-    internal class Program
+    class Program
     {
         static List<Veicolo> ParcoMezzi = new List<Veicolo>();
+
         static void Main(string[] args)
         {
-            creaDatiProva();
+            CreaDatiDiProva();
             Console.WriteLine("*** GESTIONE RIVENDITA VEICOLI USATI ***");
             char scelta = ' ';
             while (scelta.ToString().ToLower() != "q")
             {
-                scelta = scriviMenu();
+                scelta = ScriviMenu();
                 switch (scelta)
                 {
                     case '1':
-                        ElencoVeicoli();
+                        ElencoVeicoli("\n*** Elenco Generale Veicoli ***");
                         break;
                     case '2':
-                        ElencoAuto();
+                        ElencoVeicoli("\n*** Elenco AUTO ***", typeof(Auto));
                         break;
                     case '3':
-                        ElencoMoto();
+                        ElencoVeicoli("\n*** Elenco MOTO ***", typeof(Moto));
                         break;
                     default:
                         break;
                 }
             }
-            Console.ReadKey();
         }
-        #region Scrivi menu, stampa elenchi
-        private static char scriviMenu()
-        {
-            Console.WriteLine("1 - Visualizza TUTTI i veicoli");
-            Console.WriteLine("2 - Visualizza le auto");
-            Console.WriteLine("3 - Visualizza le moto");
-            Console.WriteLine("\nQ - Uscita");
-            return Console.ReadKey(true).KeyChar; //true non vedo la risposta
-        }
-        private static void ElencoVeicoli()
+
+        private static void ElencoVeicoli(string titolo, Type tipo = null)
         {
             Console.Clear();
-            Console.WriteLine("*** ELENCO GENERALE VEICOLI ***");
-            int cont = 0;
+            Console.WriteLine(titolo);
+            int conta = 0;
             foreach (var item in ParcoMezzi)
             {
-                cont++;
-                Console.WriteLine(cont.ToString() + " - " + item.ToString());
-            }
-            Console.WriteLine("\n");
-        }
-        private static void ElencoAuto()
-        {
-            Console.Clear();
-            Console.WriteLine("*** ELENCO GENERALE VEICOLI ***");
-            int cont = 0;
-            foreach (var item in ParcoMezzi)
-            {
-                if (item is Auto)
-                {
-                    cont++;
-                    Auto a = item as Auto;
-                    Console.WriteLine(cont.ToString() + " - " + a.ToString());
+                if (tipo == null || tipo == item.GetType()) { 
+                    conta++;
+                    Console.WriteLine(conta.ToString() + " - " +  item.ToString(true));
                 }
             }
             Console.WriteLine("\n");
         }
 
-        private static void ElencoMoto()
+        private static char ScriviMenu()
         {
-            Console.Clear();
-            Console.WriteLine("*** ELENCO GENERALE VEICOLI ***");
-            int cont = 0;
-            foreach (var item in ParcoMezzi)
-            {
-                if (item is Moto)
-                {
-                    cont++;
-                    Console.WriteLine(cont.ToString() + " - " + item.ToString());
-                }
-            }
-            Console.WriteLine("\n");
+            Console.WriteLine("1 - Visualizza TUTTI i veicoli");
+            Console.WriteLine("2 - Visualizza le AUTO");
+            Console.WriteLine("3 - Visualizza le MOTO");
+            Console.WriteLine("\nQ - USCITA");
+            return Console.ReadKey(true).KeyChar;
         }
-        static void creaDatiProva()
+
+        static void CreaDatiDiProva()
         {
-            Veicolo v = new Auto("BMW", "Serie 3");
+            Veicolo v = new Auto("BMW", "Serie 3", EAlimentazione.Benzina, "Blu");
             ParcoMezzi.Add(v);
-            v = new Auto("Mercedes", "CLA", true, 5, 18);
+            v = new Auto("Mercedes", "CLA", EAlimentazione.Diesel, "Grigio", true, 5, 18);
             ParcoMezzi.Add(v);
-            v = new Moto("Yamaha", "KZ5");
+            v = new Moto("Yamaha", "KZ5", EAlimentazione.Benzina, "Verde", 
+                new StructDimensioni(270,87,68), "A34DE76PLYT90", 3500, 210,
+                130, new DateTime(2021, 03, 15), 12750,
+                ETipoMoto.Enduro, 4);
             ParcoMezzi.Add(v);
-            v = new Moto("Ducati", "RossoFuoco", ETipoMoto.Strada, 4);
+            v = new Moto("Ducati", "RossoFuoco", EAlimentazione.Benzina, "Rosso", ETipoMoto.Strada, 4);
+            ParcoMezzi.Add(v);
+            v = new Auto("Fiat", "500", EAlimentazione.Elettrica, "Bianco",
+                new StructDimensioni(320, 160, 140), "TR5654ER55YJT5", 37500, 140,
+                90, new DateTime(2021, 10, 13), 17500,
+                false, 3, 16);
             ParcoMezzi.Add(v);
         }
-        #endregion
     }
 }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1D19D6EC-BB9A-4344-BD81-0551D9F39BF1}</ProjectGuid>
+    <ProjectGuid>{76574E26-EB93-4420-83DB-85848D41646E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CarShopWPF</RootNamespace>
     <AssemblyName>CarShopWPF</AssemblyName>

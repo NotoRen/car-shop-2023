@@ -8,47 +8,77 @@ namespace CarShopLibrary
 {
     public enum EAlimentazione
     {
+        Undefined,
         Benzina,
         Diesel,
         Elettrica,
         GPL,
         Metano,
         FullHybrid,
-        PluginHibrid
+        PluginHybrid
     }
+
+    public struct StructDimensioni
+    {
+        public int lunghezza;
+        public int larghezza;
+        public int altezza;
+
+        public StructDimensioni(int lung, int larg, int alt)
+        {
+            lunghezza = lung;
+            larghezza = larg;
+            altezza = alt;
+        }
+    }
+
     public abstract class Veicolo
     {
         public string Marca { get; set; }
         public string Modello { get; set; }
-        public string VIN { get; set; }
-        public string Colore { get; set; }
-        public int km { get; set; }
         public EAlimentazione Alimentazione { get; set; }
-        public int maxSpeed { get; set; }
+        public string Colore { get; set; }
+        public StructDimensioni Dimensioni { get; set; }
+        public string VIN { get; set; }
+        public int Km { get; set; }
+        public int MaxSpeed { get; set; }
         public int Potenza { get; set; }
-        public DateTime dataImmatricolazione { get; set; } 
+        public DateTime DataImmatricolazione { get; set; }
         public int Prezzo { get; set; }
 
-
-        public Veicolo(string marca, string modello)
+        public Veicolo(string marca, string modello, EAlimentazione alimentazione, string colore)
         {
             Marca = marca;
             Modello = modello;
+            Alimentazione = alimentazione;
+            Colore = colore;
         }
 
-        public Veicolo(string marca, string modello, string vin, string colore, int Km, EAlimentazione alimentazione, int MaxSpeed, int potenza, DateTime Data, int prezzo) : this(marca, modello)
+        public Veicolo(string marca, string modello, EAlimentazione alimentazione, string colore, 
+            StructDimensioni dimensioni, string vin, int km, int maxSpeed, int potenza, DateTime dataImmatricolazione, int prezzo)
+            : this(marca, modello, alimentazione, colore)
         {
+            Dimensioni = dimensioni;
             VIN = vin;
-            km = Km;
-            maxSpeed = MaxSpeed;
+            Km = km;
+            MaxSpeed = maxSpeed;
             Potenza = potenza;
-            dataImmatricolazione = Data;
+            DataImmatricolazione = dataImmatricolazione;
             Prezzo = prezzo;
         }
 
         public override string ToString()
         {
-            return Marca+" "+Modello;
+            return $"{Marca} {Modello} {Alimentazione} {Colore}";
         }
+
+        public string ToString(bool isExtended)
+        {
+            string stOut = ToString();
+            if (isExtended)
+                stOut += $" (Km {Km} - Prezzo {Prezzo} Euro)";
+            return stOut;
+        }
+
     }
 }

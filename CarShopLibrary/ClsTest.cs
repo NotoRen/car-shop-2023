@@ -8,9 +8,9 @@ namespace CarShopLibrary
 {
     public class ClsTest
     {
-        public static string helloWorld(string nome)
+        public static string HelloWorld(string name)
         {
-            return "ciao " + nome;
+            return "Ciao " + name;
         }
     }
 }
